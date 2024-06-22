@@ -39,11 +39,11 @@ class MainActivity : AppCompatActivity() {
                 val heightQ2 = height * height
                 val result = weight / heightQ2
 
-                println("seu IMC é : " + result)
+                println("Seu IMC é: " + result)
+
             }
 
+
         }
-
-
     }
 }
