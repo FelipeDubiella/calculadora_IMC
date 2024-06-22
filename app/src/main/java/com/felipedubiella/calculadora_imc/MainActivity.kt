@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.felipedubiella.calculadora_imc.databinding.ActivityMainBinding
+import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 
@@ -18,16 +19,30 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnCalculate.setOnClickListener {
 
-            val height : Float = binding.edtHeight.text.toString().toFloat()
-            val weight : Float = binding.edtWeight.text.toString().toFloat()
 
-            val heightQ2 = height * height
-            val result = weight/heightQ2
+            val heightStr: String = binding.edtHeight.text.toString()
+            val weightStr: String = binding.edtWeight.text.toString()
 
-            println("Seu IMC é: " + result)
+            if (weightStr == "" || heightStr == "") {
+
+                Snackbar
+                    .make(
+                        binding.edtHeight,
+                        "Fill all the fields",
+                        Snackbar.LENGTH_LONG
+                    ).show()
+
+            } else {
+                val weight = weightStr.toFloat()
+                val height = heightStr.toFloat()
+
+                val heightQ2 = height * height
+                val result = weight / heightQ2
+
+                println("seu IMC é : " + result)
+            }
 
         }
-
 
 
     }
