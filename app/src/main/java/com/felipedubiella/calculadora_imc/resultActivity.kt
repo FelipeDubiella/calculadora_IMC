@@ -33,7 +33,7 @@ class resultActivity : AppCompatActivity() {
         } else if (result > 30f && result <= 39.9f){
             "OBESIDADE"
         } else{
-            "OBESIDADE GRAVE "
+            "OBESIDADE GRAVE"
         }
 
         tvClassification.text = classification.toString()
