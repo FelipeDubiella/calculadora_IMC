@@ -20,7 +20,7 @@
         android:id="@+id/tvClassificationLabel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Your IMC classification is: " />
+        android:text="Your BMI classification is: " />
 
     <TextView
         android:id="@+id/tvClassification"

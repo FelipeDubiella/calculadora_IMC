@@ -7,6 +7,48 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <LinearLayout
+        android:id="@+id/bg_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gradient_bg"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp">
+
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/ic_weight"
+            app:tint="@color/white" />
+        
+        <TextView
+            android:text="BMI calculator"
+            android:layout_marginStart="24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="28sp"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:text="Fill all the fields to calculate your BMI"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="24dp"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+    </LinearLayout>
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/peso"
         android:layout_width="match_parent"
@@ -14,15 +56,19 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
+        app:hintEnabled="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/bg_header">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edtWeight"
+            android:drawableEnd="@drawable/ic_weight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/rounded_bg"
             android:hint="Write your Weight Ex: 85.500"
+            android:maxLength="6"
             android:inputType="numberDecimal"/>
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -33,14 +79,18 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        app:hintEnabled="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/peso">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edtHeight"
+            android:drawableEnd="@drawable/ic_height"
+            android:maxLength="4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/rounded_bg"
             android:hint="Write your Height Ex: 1.82"
             android:inputType="numberDecimal"/>
     </com.google.android.material.textfield.TextInputLayout>
