@@ -45,7 +45,6 @@ class MainActivity : AppCompatActivity() {
                 intent.putExtra(keyResultIMC, result)
                 startActivity(intent)
 
-                //Gradiente + icone + titulo + descrição
 
 
 
